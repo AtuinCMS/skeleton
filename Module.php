@@ -77,6 +77,14 @@ class Module extends \yii\base\Module
 
     }
 
+    /**
+     * Returns the module name. Must be set if the module it's not a core_module = 1
+     */
+    public function getName()
+    {
+        return $this->getId();
+    }
+
 
     /**
      * Sets the classname of the Module that will be installed via AppManagement library.
@@ -129,14 +137,6 @@ class Module extends \yii\base\Module
         $namespace = $reflector->getNamespaceName();
 
         $config_namespace = $namespace . '\config\AtuinConfig';
-
-//        $configFilePath = dirname($reflector->getFileName()) . '/config/AtuinConfig.php';
-//        
-//        // Bug that doesn't let loading with
-//        if (!class_exists($config_namespace) and file_exists($configFilePath))
-//        {
-//            require_once $configFilePath;
-//        }
 
         $configObject = new $config_namespace();
 
