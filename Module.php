@@ -36,7 +36,12 @@ class Module extends \yii\base\Module
     public $is_frontend = 1;
 
 
-
+    /**
+     * Description of the module
+     * @var string
+     */
+    public $_description = 'None given.';
+    
     protected static $_id;
 
     protected static $_version;
@@ -157,6 +162,17 @@ class Module extends \yii\base\Module
     public function getAlias()
     {
         return str_replace('/Module', '', str_replace('\\', '/', $this->getModuleClassName()));
+    }
+    
+    
+    /**
+     * Return the description of the module
+     * 
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->_description;
     }
     
 }
