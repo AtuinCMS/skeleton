@@ -17,7 +17,7 @@ abstract class AtuinConfig extends Component
 {
 
     /**
-     * @var \atuin\installation\app_installation\ParamMigration
+     * @var \atuin\installation\app_installation\helpers\ParamMigration
      */
     public $migration;
 
@@ -73,6 +73,36 @@ abstract class AtuinConfig extends Component
      */
     public abstract function downMigration();
 
+
+    /**
+     * Launched at APP update time.
+     *
+     * Uses a Yii2 migration class to manipulate the database for the model.
+     * It has all usual Yii2 migration methods except: up, down, safeUp, safeDown.
+     *
+     * To be able to make an update developer must surround in if statements the changes
+     * for each version, for example:
+     *
+     * if ($version < '0.0.2')
+     * {
+     *      code to execute here...
+     * }
+     *
+     * if ($version < '0.0.3')
+     * {
+     *      code to execute here...
+     * }
+     *
+     *
+     * ...
+     *
+     */
+    public function updateMigration($version)
+    {
+
+    }
+
+
     /**
      * Launched at APP installation time.
      *
@@ -101,6 +131,36 @@ abstract class AtuinConfig extends Component
      *
      */
     public abstract function downMenu();
+
+
+    /**
+     * Launched at APP update time.
+     *
+     * Uses a Yii2 migration class to manipulate the database for the model.
+     * It has all usual Yii2 migration methods except: up, down, safeUp, safeDown.
+     *
+     * To be able to make an update developer must surround in if statements the changes
+     * for each version, for example:
+     *
+     * if ($version < '0.0.2')
+     * {
+     *      code to execute here...
+     * }
+     *
+     * if ($version < '0.0.3')
+     * {
+     *      code to execute here...
+     * }
+     *
+     *
+     * ...
+     *
+     */
+    public function updateMenu($version)
+    {
+
+    }
+
 
     /**
      * Launched at APP installation time.
@@ -132,6 +192,34 @@ abstract class AtuinConfig extends Component
     public abstract function downConfig();
 
     /**
+     * Launched at APP update time.
+     *
+     * Uses a Yii2 migration class to manipulate the database for the model.
+     * It has all usual Yii2 migration methods except: up, down, safeUp, safeDown.
+     *
+     * To be able to make an update developer must surround in if statements the changes
+     * for each version, for example:
+     *
+     * if ($version < '0.0.2')
+     * {
+     *      code to execute here...
+     * }
+     *
+     * if ($version < '0.0.3')
+     * {
+     *      code to execute here...
+     * }
+     *
+     *
+     * ...
+     *
+     */
+    public function updateConfig($version)
+    {
+
+    }
+
+    /**
      * Launched at APP installation time.
      *
      * Lets developer to launch manually code that won't fit into the rest of methods.
@@ -147,5 +235,34 @@ abstract class AtuinConfig extends Component
      *
      */
     public abstract function downManual();
+
+
+    /**
+     * Launched at APP update time.
+     *
+     * Uses a Yii2 migration class to manipulate the database for the model.
+     * It has all usual Yii2 migration methods except: up, down, safeUp, safeDown.
+     *
+     * To be able to make an update developer must surround in if statements the changes
+     * for each version, for example:
+     *
+     * if ($version < '0.0.2')
+     * {
+     *      code to execute here...
+     * }
+     *
+     * if ($version < '0.0.3')
+     * {
+     *      code to execute here...
+     * }
+     *
+     *
+     * ...
+     *
+     */
+    public function updateManual($version)
+    {
+
+    }
 
 }
